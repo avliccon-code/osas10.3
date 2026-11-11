@@ -1,0 +1,111 @@
+{
+  "entities": {
+    "users": {
+      "fields": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "studentId": { "type": "string" },
+        "course": { "type": "string" },
+        "yearLevel": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "announcements": {
+      "fields": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "expirationDate": { "type": "string" }
+      }
+    },
+    "safety_reports": {
+      "fields": {
+        "reporterId": { "type": "string" },
+        "reporterName": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "scholarships": {
+      "fields": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "slots": { "type": "number" }
+      }
+    },
+    "scholarship_apps": {
+      "fields": {
+        "scholarshipId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "appointments": {
+      "fields": {
+        "studentId": { "type": "string" },
+        "type": { "type": "string" },
+        "status": { "type": "string" },
+        "date": { "type": "string" }
+      }
+    },
+    "disciplinary": {
+      "fields": {
+        "studentId": { "type": "string" },
+        "violation": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "feedbacks": {
+      "fields": {
+        "studentId": { "type": "string" },
+        "feedback": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "system_settings": {
+      "fields": {
+        "key": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "notifications": {
+      "fields": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "isRead": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "linkModule": { "type": "string" }
+      }
+    },
+    "dorm_reports": {
+      "fields": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "issueType": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      }
+    },
+    "disciplinary_reports": {
+      "fields": {
+        "reporterId": { "type": "string" },
+        "reporterName": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "incidentType": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      }
+    }
+  }
+}

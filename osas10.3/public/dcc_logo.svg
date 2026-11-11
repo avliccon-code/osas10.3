@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Scallop Outer Path or Flower Ring clip/fill -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Metallic Torch Gradient -->
+    <linearGradient id="torchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="35%" stop-color="#64748b" />
+      <stop offset="70%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Flame Gradient -->
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="50%" stop-color="#ea580c" />
+      <stop offset="80%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+
+    <!-- Top Text Path -->
+    <!-- Semi-circle arc from left to right for top text -->
+    <path id="topArcPath" d="M 68,250 A 182,182 0 1,1 432,250" fill="none"/>
+    <!-- Bottom Text Path -->
+    <path id="bottomArcPath" d="M 100,250 A 150,150 0 0,0 400,250" fill="none"/>
+
+    <!-- Clip Path for Inner Quadrants -->
+    <clipPath id="innerCircleClip">
+      <circle cx="250" cy="250" r="168" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Scalloped Crest (12 Scallops) -->
+  <path d="
+    M 250,10 
+    Q 280,12 298,28 Q 320,18 344,38 Q 360,32 384,56 Q 398,52 420,80 Q 430,80 444,112 Q 456,118 464,152 Q 474,162 476,198 Q 486,210 482,246 Q 490,260 482,298 Q 484,315 470,348 Q 470,365 448,396 Q 442,410 416,434 Q 404,444 374,460 Q 360,468 334,476 Q 315,482 284,488 Q 265,492 250,490 Q 235,492 216,488 Q 185,482 166,476 Q 140,468 126,460 Q 96,444 84,434 Q 58,410 52,396 Q 30,365 30,348 Q 16,315 18,298 Q 10,260 18,246 Q 14,210 24,198 Q 26,162 36,152 Q 44,118 56,112 Q 70,80 80,80 Q 102,52 116,56 Q 140,32 156,38 Q 180,18 202,28 Q 220,12 250,10 Z
+  " fill="#1b4098" filter="url(#shadow)" />
+
+  <!-- Outer Ring Outer Border Line -->
+  <circle cx="250" cy="250" r="228" fill="none" stroke="#ffffff" stroke-width="3" />
+  <!-- Outer Ring Inner Border Line -->
+  <circle cx="250" cy="250" r="172" fill="none" stroke="#ffffff" stroke-width="4" />
+
+  <!-- Top Curved Text: DINGALAN COMMUNITY COLLEGE -->
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="27" fill="#ffffff" letter-spacing="3.5">
+    <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">DINGALAN COMMUNITY COLLEGE</textPath>
+  </text>
+
+  <!-- Bottom Curved Text: est. 2023 -->
+  <text font-family="'Times New Roman', Georgia, serif" font-weight="bold" font-style="italic" font-size="26" fill="#ffffff" letter-spacing="2">
+    <textPath href="#bottomArcPath" startOffset="50%" text-anchor="middle">est. 2023</textPath>
+  </text>
+
+  <!-- Inner Circle Content clipped to circle -->
+  <g clip-path="url(#innerCircleClip)">
+    <!-- Quadrant 1 (Top-Left): Dark Blue with Light Blue Arches -->
+    <rect x="80" y="80" width="170" height="170" fill="#032b69" />
+    <circle cx="250" cy="250" r="150" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3" />
+    <circle cx="250" cy="250" r="130" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+    <circle cx="250" cy="250" r="110" fill="none" stroke="#0284c7" stroke-width="3" />
+    <circle cx="250" cy="250" r="90" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3 3" />
+    <circle cx="250" cy="250" r="70" fill="none" stroke="#7dd3fc" stroke-width="2" />
+
+    <!-- Quadrant 2 (Top-Right): Yellow Sun & Cyan Waves -->
+    <rect x="250" y="80" width="170" height="170" fill="#0284c7" />
+    <!-- Yellow Sun Disk -->
+    <path d="M 250,95 A 150,150 0 0,1 420,250 L 250,250 Z" fill="#eab308" />
+    <circle cx="250" cy="250" r="140" fill="none" stroke="#facc15" stroke-width="6" />
+    <circle cx="250" cy="250" r="110" fill="none" stroke="#fde047" stroke-width="5" />
+
+    <!-- Waves over sun/sky -->
+    <path d="M 250,190 C 290,175 340,205 420,180 L 420,250 L 250,250 Z" fill="#0ea5e9" />
+    <path d="M 250,205 C 300,195 350,225 420,200" fill="none" stroke="#38bdf8" stroke-width="4" />
+    <path d="M 250,220 C 295,210 345,235 420,215" fill="none" stroke="#ffffff" stroke-width="3" />
+    <path d="M 250,235 C 290,225 350,245 420,230" fill="none" stroke="#0284c7" stroke-width="4" />
+
+    <!-- Quadrant 3 (Bottom-Left): Teal with Green Palm Frond -->
+    <rect x="80" y="250" width="170" height="170" fill="#0f766e" />
+    <!-- Palm Leaf stem & fronds -->
+    <path d="M 100,400 Q 170,350 240,260" fill="none" stroke="#15803d" stroke-width="5" stroke-linecap="round" />
+    <!-- Leaf blades -->
+    <path d="
+      M 115,385 Q 110,360 135,365 
+      M 130,370 Q 120,340 150,350
+      M 145,355 Q 130,320 165,335
+      M 160,340 Q 140,300 180,320
+      M 175,320 Q 155,280 195,300
+      M 190,300 Q 170,265 210,285
+      M 205,280 Q 190,255 225,270
+    " fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Quadrant 4 (Bottom-Right): Royal Blue with Tennis/Sports Court Lines -->
+    <rect x="250" y="250" width="170" height="170" fill="#1d4ed8" />
+    <!-- Court Frame -->
+    <rect x="270" y="270" width="125" height="125" fill="none" stroke="#ffffff" stroke-width="3.5" />
+    <!-- Center service line -->
+    <line x1="332.5" y1="270" x2="332.5" y2="395" stroke="#ffffff" stroke-width="3" />
+    <!-- Service line horizontal -->
+    <line x1="270" y1="332.5" x2="395" y2="332.5" stroke="#ffffff" stroke-width="3" />
+  </g>
+
+  <!-- Quadrant Division Cross Lines -->
+  <circle cx="250" cy="250" r="168" fill="none" stroke="#ffffff" stroke-width="4" />
+  <line x1="250" y1="82" x2="250" y2="418" stroke="#ffffff" stroke-width="4" />
+  <line x1="82" y1="250" x2="418" y2="250" stroke="#ffffff" stroke-width="4" />
+
+  <!-- Center OVERLAY: Burning Torch -->
+  <g id="torchGroup">
+    <!-- Torch Outer White Glow / Outline -->
+    <!-- Handle outline -->
+    <path d="M 224,310 L 230,425 L 270,425 L 276,310 Z" fill="#ffffff" />
+    <!-- Cup outline -->
+    <path d="M 210,312 C 210,295 290,295 290,312 L 278,335 L 222,335 Z" fill="#ffffff" />
+
+    <!-- Torch Metallic Handle -->
+    <path d="M 228,315 L 233,420 L 267,420 L 272,315 Z" fill="url(#torchGrad)" stroke="#1e293b" stroke-width="2" />
+    <line x1="233" y1="420" x2="267" y2="420" stroke="#ffffff" stroke-width="3" />
+    <!-- Handle ridges -->
+    <line x1="230" y1="340" x2="270" y2="340" stroke="#475569" stroke-width="2" />
+    <line x1="231" y1="370" x2="269" y2="370" stroke="#475569" stroke-width="2" />
+
+    <!-- Torch Cup -->
+    <path d="M 215,310 C 215,300 285,300 285,310 L 274,330 L 226,330 Z" fill="#334155" stroke="#ffffff" stroke-width="2" />
+
+    <!-- Flame White Border Backdrop -->
+    <path d="
+      M 250,152
+      C 230,175 200,205 200,240
+      C 200,275 220,305 250,305
+      C 280,305 300,275 300,240
+      C 300,205 270,175 250,152 Z
+    " fill="#ffffff" />
+
+    <!-- Flame Outer Layer (Red/Orange) -->
+    <path d="
+      M 250,160
+      C 232,182 206,210 206,242
+      C 206,272 224,298 250,298
+      C 276,298 294,272 294,242
+      C 294,210 268,182 250,160 Z
+    " fill="url(#flameGrad)" />
+
+    <!-- Flame Flame Swirl Detail (Red) -->
+    <path d="
+      M 250,165
+      C 240,185 220,205 220,230
+      C 220,250 235,270 250,270
+      C 260,270 270,258 270,245
+      C 270,225 255,210 250,165 Z
+    " fill="#ef4444" />
+
+    <!-- Flame Inner Yellow Glow -->
+    <path d="
+      M 250,190
+      C 242,205 230,220 230,240
+      C 230,260 240,275 250,275
+      C 260,275 270,260 270,240
+      C 270,220 258,205 250,190 Z
+    " fill="#facc15" />
+
+    <!-- Flame Core White Spark -->
+    <path d="
+      M 250,210
+      C 245,220 238,232 238,245
+      C 238,258 244,268 250,268
+      C 256,268 262,258 262,245
+      C 262,232 255,220 250,210 Z
+    " fill="#ffffff" />
+  </g>
+</svg>

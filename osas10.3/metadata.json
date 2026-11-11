@@ -1,0 +1,6 @@
+{
+  "name": "STU-SERVE - Dingalan Community College OSAS System",
+  "description": "STU-SERVE - Dingalan Community College Office of Student Affairs Services (OSAS) Role-Based Management System featuring Admin and Student portals, Emergency Safety Reporting, Scholarships, Appointments, Dormitories, Disciplinary Records, and System Activity Logs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

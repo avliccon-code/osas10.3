@@ -1,0 +1,19 @@
+{
+  "short_name": "STU-SERVE",
+  "name": "STU-SERVE - Dingalan Community College OSAS Portal",
+  "icons": [
+    {
+      "src": "/dcc_logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#1e3a8a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "description": "Dingalan Community College Office of Student Affairs & Services Portal"
+}

@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-8px);
+  }
+  40%, 80% {
+    transform: translateX(8px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #161616;
+  color: #f3f4f6;
+}
+
+.dark .bg-slate-100 {
+  background-color: #161616;
+}
+
+.dark .bg-white {
+  background-color: #1f1f1f;
+}
+
+.dark .bg-slate-50 {
+  background-color: #242424;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-100 {
+  border-color: #2e2e2e;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f3f4f6;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600 {
+  color: #e2e8f0;
+}
+
+.dark .text-slate-500 {
+  color: #cbd5e1;
+}
+
+.dark .text-slate-400 {
+  color: #94a3b8;
+}
+
+.dark label {
+  color: #f1f5f9;
+}
+
+/* Comprehensive Dark Mode Input & Control Enhancements */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark input[type="date"],
+.dark input[type="search"],
+.dark select,
+.dark textarea {
+  background-color: #262626 !important;
+  color: #f8fafc !important;
+  border-color: #3f3f46 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark select option {
+  background-color: #1f1f1f !important;
+  color: #f8fafc !important;
+}
+
+.dark .bg-slate-200 {
+  background-color: #2e2e2e;
+}
+
+.dark .hover\:bg-slate-100:hover {
+  background-color: #282828;
+}
+
+.dark .hover\:bg-slate-200:hover {
+  background-color: #333333;
+}
+
+.dark .hover\:bg-slate-50:hover {
+  background-color: #242424;
+}
+
+/* Custom Scrollbar to reduce scroll effort & visual distraction */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Compact Table Row Styling */
+table tbody tr td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Comprehensive @media print stylesheet for OSAS Admin and Student printable documents */
+@media print {
+  @page {
+    margin: 8mm 10mm;
+    size: portrait;
+  }
+
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    font-family: Arial, 'Segoe UI', Tahoma, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /*
+   * STRICT PRINT ISOLATION:
+   * When .printable-document is present, make all dashboard chrome, navigation,
+   * sidebars, and surrounding backgrounds invisible, and render ONLY .printable-document.
+   */
+  body:has(.printable-document) * {
+    visibility: hidden;
+  }
+
+  body:has(.printable-document) .printable-document,
+  body:has(.printable-document) .printable-document * {
+    visibility: visible !important;
+  }
+
+  body:has(.printable-document) .printable-document {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Reset layout constraints of root containers */
+  #root,
+  #root > div,
+  main {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Completely hide all non-printable UI components */
+  header,
+  nav,
+  aside,
+  button,
+  .no-print,
+  .print\:hidden,
+  #btn-back-to-top,
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea,
+  .toast-container,
+  [role="status"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Modal container reset for flawless printing */
+  .fixed {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    backdrop-filter: none !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Reset modal dialog card box */
+  .fixed > div {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure scrollable containers expand fully on paper */
+  .custom-scrollbar {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Force single-page guarantee for official slips */
+  #printable-appointment-slip,
+  #printable-safety-slip,
+  #printable-report-photo-slip,
+  #printable-disciplinary-slip,
+  #printable-intervention-slip,
+  #printable-scholarship-slip,
+  #printable-student-slip,
+  #printable-referred-disciplinary-slip,
+  #printable-resolution-slip,
+  #printable-endorsement-slip {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Multi-page support for long rosters and directories */
+  #printable-master-roster,
+  #printable-category-roster {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Avoid breaking signatures or footer sections across pages and pin to absolute bottom */
+  .signature-block,
+  .signatures-section,
+  .printable-footer-block {
+    position: fixed !important;
+    bottom: 10mm !important;
+    left: 15mm !important;
+    right: 15mm !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-top: 0 !important;
+    padding-top: 6px !important;
+    z-index: 100 !important;
+  }
+
+  .signature-block .grid,
+  .signatures-section .grid,
+  .printable-footer-block .grid {
+    align-items: flex-end !important;
+  }
+
+  /* Clean printable tables */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #94a3b8 !important;
+    padding: 4px 6px !important;
+    color: #0f172a !important;
+    font-size: 9pt !important;
+  }
+
+  table th {
+    background-color: #f1f5f9 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force light backgrounds for print */
+  .dark,
+  .dark body,
+  .dark .bg-slate-900,
+  .dark .bg-slate-800,
+  .dark .bg-slate-950,
+  .dark .bg-white {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .bg-slate-50,
+  .bg-amber-50,
+  .bg-blue-50,
+  .bg-emerald-50,
+  .bg-indigo-50,
+  .bg-purple-50 {
+    background-color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .border {
+    border-color: #94a3b8 !important;
+  }
+}
+
+/* Direct Print Container: Completely hidden on screen; only rendered when print preview dialog opens */
+.direct-print-container {
+  display: none !important;
+}
+
+@media print {
+  .direct-print-container {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+  }
+}
